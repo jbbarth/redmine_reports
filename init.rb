@@ -1,5 +1,7 @@
 require 'redmine'
 
+require 'reports_plugin/macros'
+
 Redmine::Plugin.register :redmine_reports do
   author 'Jean-Baptiste BARTH'
   description 'Add ability to display some graph/reports on wiki formatted areas'
