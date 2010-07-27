@@ -1,0 +1,8 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  title: Projects weighted by tickets
+  author_id: 1
+  type: text
+  source: "[['frogs',3],['buzzards',7],['deer',2.5],['turkeys',6],['moles',5],['ground hogs',4]]"
+  rendering: "seriesDefaults:{renderer:$.jqplot.PieRenderer}"
