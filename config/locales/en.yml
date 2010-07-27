@@ -1,3 +1,6 @@
 # English strings go here for Rails i18n
 en:
-  my_label: "My label"
+  label_graph_new: "New graph"
+  label_graph_plural: "Graphs"
+  field_source: "Source"
+  field_rendering: "Rendering"

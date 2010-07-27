@@ -1,0 +1,10 @@
+<%= error_messages_for 'graph' %>
+
+<!--[form:graph]-->
+<div class="box tabular">
+  <p><%= f.text_field :title %></p>
+  <p><%= f.select("language", Graph::AVAILABLE_LANGUAGES) %></p>
+  <p><%= f.text_area :source, :size => "60x15" %></p>
+  <p><%= f.text_area :rendering, :size => "60x5" %></p>
+</div>
+<!--[eoform:graph]-->

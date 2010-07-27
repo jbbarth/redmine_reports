@@ -1,0 +1,34 @@
+<div class="contextual">
+  <%= link_to l(:label_graph_new), {:controller => 'graphs', :action => 'new'}, :class => 'icon icon-add' %>
+</div>
+
+<h2><%= link_to l(:label_graph_plural), {:controller => 'graphs', :action => 'index'} %></h2>
+
+<% if @graphs.any? %>
+<table class="list">		
+  <thead>
+    <tr>
+	    <th><%= l(:field_title) %></th>
+      <th><%= l(:field_author) %></th>
+      <th> </th>
+  </tr></thead>
+  <tbody>
+  <% for graph in @graphs -%>
+  <tr class="graph <%= cycle("odd", "even") %>">
+	  <td class="title"><%= link_to h(graph.title), {:controller => 'graphs', :action => 'show', :id => graph} %></td>
+	  <td class="author"><%= h(graph.author.try(:name)) %></td>
+    <td class="buttons">
+      <%= link_to l(:button_update), {:controller => 'graphs', :action => 'edit', :id => graph}, :class => 'icon icon-edit' %>
+      <%= link_to l(:button_delete), {:controller => 'graphs', :action => 'destroy', :id => graph}, :class => 'icon icon-del',
+                  :confirm => l(:text_are_you_sure), :method => :delete %>
+    </td>
+  </tr>
+  <% end -%>
+  </tbody>
+</table>
+
+<% else %>
+<p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+
+<% html_title(l(:label_graph_plural)) -%>
