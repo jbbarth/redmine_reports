@@ -1,11 +1,3 @@
-<% content_for :header_tags do -%>
-  <% %w(jquery-1.4.2.min.js jquery.jqplot.js plugins/jqplot.pieRenderer.js).each do |file| -%>
-  <%= javascript_include_tag file, :plugin => :redmine_reports -%>
-  <% end -%>
-  <%= stylesheet_link_tag "reports", :plugin => :redmine_reports %>
-  <%= stylesheet_link_tag "jquery.jqplot.css", :plugin => :redmine_reports %>
-<% end -%>
-
 <div class="contextual">
   <%= link_to l(:button_update), {:controller => 'graphs', :action => 'edit', :id => @graph}, :class => 'icon icon-edit' %>
   <%= link_to l(:button_delete), {:controller => 'graphs', :action => 'destroy', :id => @graph}, :class => 'icon icon-del',
@@ -14,6 +6,6 @@
 
 <h2><%= link_to l(:label_graph_plural), graphs_path %> &#187; <%=h @graph.title %></h2>
 
-<%= jqplot_graph(@graph) %>
+<%= render :partial => 'jqplot_graph', :locals => {:graph => @graph} %>
 
 <% html_title(l(:label_graph_plural)) -%>
