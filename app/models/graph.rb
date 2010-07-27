@@ -13,7 +13,7 @@ class Graph < ActiveRecord::Base
       res = eval(source)
       if res.is_a?(Array) && res.first.is_a?(Array)
         "[" + res.map do |e|
-            "[#{e[0]},#{e[1]}]"
+            "[\"#{e[0].gsub('"','')}\",#{e[1]}]"
         end.join(",") + "]"
       else
         res
