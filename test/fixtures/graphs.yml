@@ -6,3 +6,10 @@ one:
   type: text
   source: "[['frogs',3],['buzzards',7],['deer',2.5],['turkeys',6],['moles',5],['ground hogs',4]]"
   rendering: "seriesDefaults:{renderer:$.jqplot.PieRenderer}"
+two:
+  id: 2
+  title: Projects weighted by tickets, ruby-style
+  author_id: 1
+  type: ruby
+  source: "puts \"[['frogs',3],['buzzards',7],['deer',2.5],['turkeys',6],['moles',5],['ground hogs',4]]\""
+  rendering: "seriesDefaults:{renderer:$.jqplot.PieRenderer}"

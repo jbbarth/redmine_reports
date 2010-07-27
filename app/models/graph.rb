@@ -3,12 +3,21 @@ class Graph < ActiveRecord::Base
 
   belongs_to :author, :class_name => 'User'
 
-  AVAILABLE_LANGUAGES = %w(text)
+  AVAILABLE_LANGUAGES = %w(text ruby)
 
   def eval_source
     case self.language
     when "text"
       source
+    when "ruby"
+      res = eval(source)
+      if res.is_a?(Array) && res.first.is_a?(Array)
+        "[" + res.map do |e|
+            "[#{e[0]},#{e[1]}]"
+        end.join(",") + "]"
+      else
+        res
+      end
     else
       raise "Unsupported type. How did you introduce this into the database ?"
     end
