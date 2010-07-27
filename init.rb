@@ -1,7 +1,6 @@
 require 'redmine'
 
 require 'reports_plugin/macros'
-require 'reports_plugin/layout_hook.rb'
 
 Redmine::Plugin.register :redmine_reports do
   author 'Jean-Baptiste BARTH'
