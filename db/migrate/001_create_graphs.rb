@@ -3,7 +3,7 @@ class CreateGraphs < ActiveRecord::Migration
     create_table :graphs do |t|
       t.column :title, :string
       t.column :author_id, :integer
-      t.column :type, :string
+      t.column :language, :string
       t.column :source, :text
       t.column :rendering, :text
     end
