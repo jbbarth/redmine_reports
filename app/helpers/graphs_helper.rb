@@ -2,7 +2,7 @@ module GraphsHelper
   def jqplot_graph(graph)
     return unless graph.is_a?(Graph)
     html = []
-    html << %(<div class="jqPlot" id="chart#{graph.id}" style="height:340px;width:540px;"></div>)
+    html << %(<div class="jqPlot" id="chart#{graph.id}" style="height:300px;width:450px;"></div>)
     html << %(<script type="text/javascript" language="javascript">)
     html << %(//<![CDATA[)
     html << %(jQuery.noConflict();)
