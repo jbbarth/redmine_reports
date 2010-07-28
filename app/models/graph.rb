@@ -4,7 +4,11 @@ class Graph < ActiveRecord::Base
   belongs_to :author, :class_name => 'User'
 
   AVAILABLE_LANGUAGES = %w(text ruby)
-
+  
+  def rendering=(value)
+    write_attribute(:rendering, value.gsub(/\$\./,'jQuery.'))
+  end
+  
   def eval_source
     case self.language
     when "text"
