@@ -9,6 +9,11 @@ class GraphsController < ApplicationController
   
   def show
     @graph = Graph.find(params[:id])
+    begin
+      @graph.eval_source
+    rescue
+      flash[:error] = $!.message.gsub("<","&lt;").gsub(">","&gt;")
+    end
   end
   
   def new

@@ -12,6 +12,7 @@ class Graph < ActiveRecord::Base
   end
   
   def eval_source
+    return @evaled_source if @evaled_source
     case self.language
     when "text"
       res = source
@@ -36,7 +37,7 @@ class Graph < ActiveRecord::Base
     end
     #reformat "lineX ="
     @keys ||= []
-    res.gsub(/(line\d+)\s*=\s*/) do
+    @evaled_source = res.gsub(/(line\d+)\s*=\s*/) do
       key = "chart#{self.id}#{$1}"
       @keys << key
       "#{key} = "

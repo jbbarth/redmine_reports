@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag "jquery.jqplot.css", :plugin => :redmine_reports %>
 <% end -%>
 
+<% unless flash[:error] -%>
 <div class="jqPlot" id="chart<%=graph.id%>" style="height:300px;width:450px;"></div>
 <script type="text/javascript" language="javascript">
   //<![CDATA[
@@ -16,3 +17,4 @@
   });
   //]]>
 </script>
+<% end -%>
