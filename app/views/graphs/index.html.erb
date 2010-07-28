@@ -19,6 +19,7 @@
 	  <td class="author"><%= h(graph.author.try(:name)) %></td>
     <td class="buttons">
       <%= link_to l(:button_update), {:controller => 'graphs', :action => 'edit', :id => graph}, :class => 'icon icon-edit' %>
+      <%= link_to l(:button_copy), {:controller=>'graphs',:action => 'new','copy_from'=>graph.id}, :class => 'icon icon-copy' %>
       <%= link_to l(:button_delete), {:controller => 'graphs', :action => 'destroy', :id => graph}, :class => 'icon icon-del',
                   :confirm => l(:text_are_you_sure), :method => :delete %>
     </td>

@@ -13,6 +13,10 @@ class GraphsController < ApplicationController
   
   def new
     @graph = Graph.new
+    if params[:copy_from]
+      @graph.attributes = Graph.find_by_id(params[:copy_from]).try(:attributes)
+      @graph.title = l(:label_graph_new)
+    end
   end
   
   def create
