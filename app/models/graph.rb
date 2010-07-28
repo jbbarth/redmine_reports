@@ -1,8 +1,10 @@
 class Graph < ActiveRecord::Base
   unloadable
-
+  
+  attr_accessor :keys
+  
   belongs_to :author, :class_name => 'User'
-
+  
   AVAILABLE_LANGUAGES = %w(text ruby)
   
   def rendering=(value)
@@ -12,21 +14,35 @@ class Graph < ActiveRecord::Base
   def eval_source
     case self.language
     when "text"
-      source
+      res = source
     when "ruby"
-      res = eval(source)
-      if res.is_a?(Array) && res.first.is_a?(Array)
-        "[" + res.map do |e|
+      src = eval(source)
+      if src.is_a?(Hash)
+        res = ""
+        src.each do |k,v|
+          res << "#{k} = ["
+          res << v.map do |e|
             "[\"#{e[0].gsub('"','')}\",#{e[1]}]"
-        end.join(",") + "]"
+          end.join(",")
+          res << "]"
+        end
+      elsif src.is_a?(String)
+        res = src
       else
-        res
+        raise "If you use ruby language, you should provide a String or a Hash"
       end
     else
       raise "Unsupported type. How did you introduce this into the database ?"
     end
+    #reformat "lineX ="
+    @keys ||= []
+    res.gsub(/(line\d+)\s*=\s*/) do
+      key = "chart#{self.id}#{$1}"
+      @keys << key
+      "#{key} = "
+    end
   end
-
+  
   def renderers
     self.rendering.scan(/jqplot\.(\w+)Renderer/).map do |r|
       r = r.first
