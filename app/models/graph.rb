@@ -28,6 +28,6 @@ class Graph < ActiveRecord::Base
       r = r.first
       r.gsub!(/^(\w)/){ $1.downcase } unless r.include?("Bezier")
       "plugins/jqplot.#{r}Renderer.js"
-    end
+    end || []
   end
 end
