@@ -22,4 +22,12 @@ class Graph < ActiveRecord::Base
       raise "Unsupported type. How did you introduce this into the database ?"
     end
   end
+
+  def renderers
+    self.rendering.scan(/jqplot\.(\w+)Renderer/).map do |r|
+      r = r.first
+      r.gsub!(/^(\w)/){ $1.downcase } unless r.include?("Bezier")
+      "plugins/jqplot.#{r}Renderer.js"
+    end
+  end
 end

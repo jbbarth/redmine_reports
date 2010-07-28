@@ -1,5 +1,5 @@
 <% content_for :header_tags do -%>
-  <% %w(jquery-1.4.2.min.js jquery.jqplot.js plugins/jqplot.pieRenderer.js).each do |file| -%>
+  <% %W(jquery-1.4.2.min.js jquery.jqplot.js #{graph.renderers.join(" ")}).each do |file| -%>
   <%= javascript_include_tag file, :plugin => :redmine_reports -%>
   <% end -%>
   <%= stylesheet_link_tag "reports", :plugin => :redmine_reports %>
