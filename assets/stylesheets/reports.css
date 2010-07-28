@@ -1,1 +1,2 @@
 .icon-graphs, #admin-menu a.graphs { background-image: url(../images/chart_pie.png); }
+table.jqplot-table-legend { padding-top:2px; }
