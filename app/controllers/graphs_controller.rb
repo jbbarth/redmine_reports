@@ -21,6 +21,7 @@ class GraphsController < ApplicationController
   
   def create
     @graph = Graph.new(params[:graph])
+    @graph.author_id = User.current.id
     if @graph.save
       flash[:notice] = l(:notice_successful_create)
       redirect_to graph_path(@graph)
