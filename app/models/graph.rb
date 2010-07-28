@@ -22,7 +22,7 @@ class Graph < ActiveRecord::Base
         src.each do |k,v|
           res << "#{k} = ["
           res << v.map do |e|
-            "[\"#{e[0].gsub('"','')}\",#{e[1]}]"
+            "[\"#{e[0].to_s.gsub('"','')}\",#{e[1]}]"
           end.join(",")
           res << "]"
         end
