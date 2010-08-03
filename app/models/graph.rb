@@ -53,4 +53,10 @@ class Graph < ActiveRecord::Base
       "plugins/jqplot.#{r}Renderer.js"
     end || []
   end
+  
+  def self.size
+    settings = Setting["plugin_redmine_reports"]
+    [(settings["graph_size_x"].match(/^\d+$/) ? settings["graph_size_x"] : "450"),
+     (settings["graph_size_y"].match(/^\d+$/) ? settings["graph_size_y"] : "300")]
+  end
 end

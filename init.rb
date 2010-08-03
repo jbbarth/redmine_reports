@@ -10,6 +10,10 @@ Redmine::Plugin.register :redmine_reports do
   author_url 'mailto:jeanbaptiste.barth@gmail.com'
   version '0.1'
   requires_redmine :version_or_higher => '1.0.0'
+  settings :default => {
+    'graph_size_x' => "450",
+    'graph_size_y' => "300",
+  }, :partial => 'settings/reports_settings'
 end
 
 Redmine::MenuManager.map :admin_menu do |menu|

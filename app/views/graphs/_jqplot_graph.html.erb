@@ -1,3 +1,5 @@
+<% size = Graph.size %>
+
 <% content_for :header_tags do -%>
   <% (%W(jquery-1.4.2.min.js jquery.jqplot.js)+graph.renderers).each do |file| -%>
   <%= javascript_include_tag file, :plugin => :redmine_reports -%>
@@ -6,7 +8,7 @@
 <% end -%>
 
 <% unless flash[:error] -%>
-<div class="jqPlot" id="chart<%=graph.id%>" style="height:300px;width:450px;"></div>
+<div class="jqPlot" id="chart<%=graph.id%>" style="width:<%=size[0]%>px;height:<%=size[1]%>px;"></div>
 <script type="text/javascript" language="javascript">
   //<![CDATA[
   jQuery.noConflict();
