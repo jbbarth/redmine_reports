@@ -1,4 +1,5 @@
 .icon-graphs, #admin-menu a.graphs { background-image: url(../images/chart_pie.png); }
 table.jqplot-table-legend { padding-top:2px; }
+table.jqplot-table-legend td { border:0; padding:2px 4px; }
 td.jqplot-table-legend { color:#000; }
 div.jqplot-data-label { color:#000; }
