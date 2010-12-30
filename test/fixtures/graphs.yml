@@ -11,5 +11,5 @@ two:
   title: Projects weighted by tickets, ruby-style
   author_id: 1
   language: ruby
-  source: "a=[['frogs',3],['buzzards',7],['deer',2.5],['turkeys',6],['moles',5]];a<<['ground hogs',4];a"
+  source: "a=[['frogs',3],['buzzards',7],['deer',2.5],['turkeys',6],['moles',5]];a<<['ground hogs',4];{:line1 => a}"
   rendering: "seriesDefaults:{renderer:jQuery.jqplot.PieRenderer}"

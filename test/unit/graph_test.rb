@@ -6,7 +6,7 @@ class GraphTest < ActiveSupport::TestCase
   def test_eval_source
     data = "[['frogs',3],['buzzards',7],['deer',2.5],['turkeys',6],['moles',5],['ground hogs',4]]"
     assert_equal data, Graph.find(1).eval_source
-    assert_equal data.gsub("'",'"'), Graph.find(2).eval_source
+    assert_equal "chart2line1 = #{data.gsub("'",'"')}", Graph.find(2).eval_source
   end
   
   def test_renderers
