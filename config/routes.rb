@@ -1,3 +1,3 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :graphs
+RedmineApp::Application.routes.draw do
+  resources :graphs
 end
