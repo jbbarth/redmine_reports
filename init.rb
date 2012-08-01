@@ -10,6 +10,7 @@ Redmine::Plugin.register :redmine_reports do
   author_url 'mailto:jeanbaptiste.barth@gmail.com'
   version '0.2'
   requires_redmine :version_or_higher => '2.0.0'
+  requires_redmine_plugin :redmine_base_jquery, :version_or_higher => '0.0.1'
   settings :default => {
     'graph_size_x' => "450",
     'graph_size_y' => "300",

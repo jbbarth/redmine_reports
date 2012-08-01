@@ -1,7 +1,7 @@
 <% size = Graph.size %>
 
 <% content_for :header_tags do -%>
-  <% (%W(jquery-1.4.2.min.js jquery.jqplot.js)+graph.renderers).each do |file| -%>
+  <% (%W(jquery.jqplot.js)+graph.renderers).each do |file| -%>
   <%= javascript_include_tag file, :plugin => :redmine_reports -%>
   <% end -%>
   <%= stylesheet_link_tag "jquery.jqplot.css", :plugin => :redmine_reports %>
@@ -11,7 +11,6 @@
 <div class="jqPlot" id="chart<%=graph.id%>" style="width:<%=size[0]%>px;height:<%=size[1]%>px;"></div>
 <script type="text/javascript" language="javascript">
   //<![CDATA[
-  jQuery.noConflict();
   <%=graph.eval_source%>;
   plot<%=graph.id%> = jQuery.jqplot('chart<%=graph.id%>', [<%=graph.keys.join(",")%>], {
     title: '<%=graph.title%>',
