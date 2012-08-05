@@ -11,7 +11,7 @@
 <div class="jqPlot" id="chart<%=graph.id%>" style="width:<%=size[0]%>px;height:<%=size[1]%>px;"></div>
 <script type="text/javascript" language="javascript">
   //<![CDATA[
-  <%=graph.eval_source%>;
+  <%=graph.eval_source.html_safe%>;
   plot<%=graph.id%> = jQuery.jqplot('chart<%=graph.id%>', [<%=graph.keys.join(",")%>], {
     title: '<%=graph.title%>',
     <%=graph.rendering.split(/\n+/).join("\n  ")%>
