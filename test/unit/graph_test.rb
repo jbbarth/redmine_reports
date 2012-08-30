@@ -8,8 +8,4 @@ class GraphTest < ActiveSupport::TestCase
     assert_equal data, Graph.find(1).eval_source
     assert_equal "chart2line1 = #{data.gsub("'",'"')}", Graph.find(2).eval_source
   end
-  
-  def test_renderers
-    assert_equal ["plugins/jqplot.pieRenderer.js"], Graph.find(1).renderers
-  end
 end

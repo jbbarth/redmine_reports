@@ -46,14 +46,6 @@ class Graph < ActiveRecord::Base
     end
   end
   
-  def renderers
-    self.rendering.scan(/jqplot\.(\w+)Renderer/).map do |r|
-      r = r.first
-      r.gsub!(/^(\w)/){ $1.downcase } unless r.include?("Bezier")
-      "plugins/jqplot.#{r}Renderer.js"
-    end || []
-  end
-  
   def self.size
     settings = Setting["plugin_redmine_reports"]
     [(settings["graph_size_x"].match(/^\d+$/) ? settings["graph_size_x"] : "450"),

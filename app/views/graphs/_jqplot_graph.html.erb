@@ -1,10 +1,8 @@
 <% size = Graph.size %>
 
 <% content_for :header_tags do -%>
-  <% (%W(jquery.jqplot.js)+graph.renderers).each do |file| -%>
-  <%= javascript_include_tag file, :plugin => :redmine_reports -%>
-  <% end -%>
-  <%= stylesheet_link_tag "jquery.jqplot.css", :plugin => :redmine_reports %>
+  <%= javascript_include_tag "jquery.jqplot.min.js" , :plugin => :redmine_reports -%>
+  <%= stylesheet_link_tag "jquery.jqplot.min.css", :plugin => :redmine_reports %>
 <% end -%>
 
 <% unless flash[:error] -%>
