@@ -3,6 +3,8 @@ class GraphsController < ApplicationController
 
   layout 'admin'
 
+  before_filter :require_admin, :except => :show
+
   def index
     @graphs = Graph.all
   end
