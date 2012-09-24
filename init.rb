@@ -1,7 +1,10 @@
 require 'redmine'
 
-require 'reports_plugin/macros'
 require 'reports_plugin/hooks/view_layouts_base_html_head'
+
+ActionDispatch::Callbacks.to_prepare do
+  require_dependency 'reports_plugin/macros'
+end
 
 Redmine::Plugin.register :redmine_reports do
   author 'Jean-Baptiste BARTH'
