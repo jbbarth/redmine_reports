@@ -14,7 +14,7 @@
   <%=graph.eval_source.html_safe%>;
   plot<%=graph.id%> = jQuery.jqplot('chart<%=graph.id%>', [<%=graph.keys.join(",")%>], {
     title: '<%=graph.title%>',
-    <%=graph.rendering.split(/\n+/).join("\n  ")%>
+    <%= graph.rendering.split(/\n+/).join("\n  ").html_safe %>
   });
   //]]>
 </script>
