@@ -8,9 +8,9 @@ end
 
 Redmine::Plugin.register :redmine_reports do
   name 'Redmine Reports plugin'
-  author 'Jean-Baptiste BARTH'
   description 'Add ability to display some graph/reports on wiki formatted areas'
-  url 'http://github.com/jbbarth/redmine_reports'
+  url 'https://github.com/jbbarth/redmine_reports'
+  author 'Jean-Baptiste BARTH'
   author_url 'mailto:jeanbaptiste.barth@gmail.com'
   version '0.2'
   requires_redmine :version_or_higher => '2.1.0'
