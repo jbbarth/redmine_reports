@@ -7,6 +7,7 @@ ActionDispatch::Callbacks.to_prepare do
 end
 
 Redmine::Plugin.register :redmine_reports do
+  name 'Redmine Reports plugin'
   author 'Jean-Baptiste BARTH'
   description 'Add ability to display some graph/reports on wiki formatted areas'
   url 'http://github.com/jbbarth/redmine_reports'
