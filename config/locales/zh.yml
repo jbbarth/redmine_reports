@@ -1,0 +1,8 @@
+# Simplified Chinese strings go here for Rails i18n
+# Author: Steven.W
+# Based on file: en.yml
+zh:
+  label_graph_new: "新建图形"
+  label_graph_plural: "图形"
+  field_source: "源"
+  field_rendering: "渲染"
