@@ -14,6 +14,7 @@ Redmine::Plugin.register :redmine_reports do
   author_url 'mailto:jeanbaptiste.barth@gmail.com'
   version '0.2'
   requires_redmine :version_or_higher => '2.1.0'
+  requires_redmine_plugin :redmine_base_rspec, :version_or_higher => '0.0.3' if Rails.env.test?
   settings :default => {
     'graph_size_x' => "450",
     'graph_size_y' => "300",
