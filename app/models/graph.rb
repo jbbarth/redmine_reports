@@ -5,7 +5,7 @@ class Graph < ActiveRecord::Base
   
   belongs_to :author, :class_name => 'User'
 
-  default_scope :order => 'id desc'
+  default_scope { order('id desc') }
   
   AVAILABLE_LANGUAGES = %w(text ruby)
   
