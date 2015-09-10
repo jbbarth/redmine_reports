@@ -2,6 +2,8 @@ class Graph < ActiveRecord::Base
   unloadable
   
   attr_accessor :keys
+
+  attr_accessible :title, :author_id, :language, :source, :rendering
   
   belongs_to :author, :class_name => 'User'
 
