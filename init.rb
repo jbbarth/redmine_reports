@@ -22,5 +22,7 @@ Redmine::Plugin.register :redmine_reports do
 end
 
 Redmine::MenuManager.map :admin_menu do |menu|
-  menu.push :graphs, {:controller => :graphs}, :caption => :label_graph_plural
+  menu.push :graphs, {:controller => :graphs},
+            :caption => :label_graph_plural,
+            :html => {:class => 'icon'}
 end
