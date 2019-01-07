@@ -317,7 +317,7 @@
                             }
                             else if (curr > 1) {
                                 prev = curr;
-                                continue;
+
                             }
                             else if (curr < 1) {
                                 // was prev or is curr closer to one?

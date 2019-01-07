@@ -1,9 +1,11 @@
 class Graph < ActiveRecord::Base
+  include Redmine::SafeAttributes
+
   unloadable
   
   attr_accessor :keys
 
-  attr_accessible :title, :author_id, :language, :source, :rendering
+  safe_attributes :title, :author_id, :language, :source, :rendering
   
   belongs_to :author, :class_name => 'User'
 

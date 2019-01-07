@@ -2,7 +2,7 @@ require 'redmine'
 
 require 'reports_plugin/hooks/view_layouts_base_html_head'
 
-ActionDispatch::Callbacks.to_prepare do
+ActiveSupport::Reloader.to_prepare do
   require_dependency 'reports_plugin/macros'
 end
 

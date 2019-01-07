@@ -14,7 +14,7 @@
   </tr></thead>
   <tbody>
   <% for graph in @graphs -%>
-  <tr class="graph <%= cycle("odd", "even") %>">
+  <tr class="graph">
 	  <td class="title"><%= link_to h(graph.title), {:controller => 'graphs', :action => 'show', :id => graph} %></td>
 	  <td class="author"><%= h(graph.author.try(:name)) %></td>
     <td class="buttons">
