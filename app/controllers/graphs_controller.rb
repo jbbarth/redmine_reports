@@ -44,7 +44,8 @@ class GraphsController < ApplicationController
   
   def update
     @graph = Graph.find(params[:id])
-    if @graph.update_attributes(params[:graph])
+    @graph.safe_attributes = params[:graph]
+    if @graph.save
       flash[:notice] = l(:notice_successful_update)
       redirect_to graph_path(@graph)
     else
