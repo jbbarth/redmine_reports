@@ -27,7 +27,8 @@ class GraphsController < ApplicationController
   end
   
   def create
-    @graph = Graph.new(params[:graph])
+    @graph = Graph.new
+    @graph.safe_attributes = params[:graph]
     @graph.author_id = User.current.id
     if @graph.save
       flash[:notice] = l(:notice_successful_create)
