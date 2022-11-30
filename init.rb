@@ -4,6 +4,7 @@ require 'reports_plugin/hooks/view_layouts_base_html_head'
 
 ActiveSupport::Reloader.to_prepare do
   require_dependency 'reports_plugin/macros'
+  require_dependency 'reports_plugin/user_patch'
 end
 
 Redmine::Plugin.register :redmine_reports do
