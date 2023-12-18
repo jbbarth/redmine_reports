@@ -1,5 +1,13 @@
 # Redmine reports plugin
 
+NOT MAINTAINED ANYMORE
+----------------------
+
+This plugin is not maintained anymore, and won't be updated for Redmine 5.0+.
+
+Description
+-----------
+
 This plugin aims at providing graphs which can be displayed in wiki formatted areas of Redmine.
 
 Test status
